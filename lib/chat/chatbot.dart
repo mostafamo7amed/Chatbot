@@ -14,7 +14,7 @@ class ChatView extends StatefulWidget {
 class _ChatViewState extends State<ChatView> {
   ChatUser human = ChatUser(id: '1', firstName: 'Mostafa', lastName: 'Mohamed');
   ChatUser bot = ChatUser(id: '2', firstName: 'Gemini');
-  final url = Constant().base_uri + Constant().api_key;
+  final url = Constant().baseUrl + Constant().apiKey;
   List<ChatMessage> allMessages = [];
   List<ChatUser> typing = [];
 
@@ -44,8 +44,6 @@ class _ChatViewState extends State<ChatView> {
           createdAt: DateTime.now(),
         );
         allMessages.insert(0, m2);
-      } else {
-        print('error');
       }
     }).catchError((e) {});
     typing.remove(bot);
@@ -56,6 +54,7 @@ class _ChatViewState extends State<ChatView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: DashChat(
+        scrollToBottomOptions: ScrollToBottomOptions(disabled: false),
         typingUsers: typing,
         currentUser: human,
         onSend: (ChatMessage message) {
