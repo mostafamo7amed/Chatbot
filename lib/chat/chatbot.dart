@@ -54,7 +54,6 @@ class _ChatViewState extends State<ChatView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: DashChat(
-        scrollToBottomOptions: ScrollToBottomOptions(disabled: false),
         typingUsers: typing,
         currentUser: human,
         onSend: (ChatMessage message) {

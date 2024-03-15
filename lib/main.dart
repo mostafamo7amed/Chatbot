@@ -1,4 +1,3 @@
-import 'package:chatbot/chat/chatbot.dart';
 import 'package:chatbot/chat/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Chatbot',
+      title: 'Chat Bot',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.blue,
